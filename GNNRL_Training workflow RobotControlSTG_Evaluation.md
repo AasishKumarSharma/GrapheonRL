@@ -49,7 +49,7 @@ A **comprehensive analysis report** for the test run of the GNN-RL scheduler tra
 
 ### **Final Makespan**
 
-* **569.0** — This is the total time taken to complete the 90-task workflow.
+* **569.0**: This is the total time taken to complete the 90-task workflow.
 * Decent considering no resource overload or idling at scale.
 
 ### **Task Mapping Example**
@@ -66,7 +66,7 @@ A **comprehensive analysis report** for the test run of the GNN-RL scheduler tra
 
 ### **FPS (Frames per Second)**
 
-* Ranges from \~750 to \~880 on CPU — **efficient for a CPU-only run with 90 tasks**.
+* Ranges from \~750 to \~880 on CPU: **efficient for a CPU-only run with 90 tasks**.
 
 ### **Resource-Aware Learning**
 
@@ -85,7 +85,7 @@ A **comprehensive analysis report** for the test run of the GNN-RL scheduler tra
 
 ---
 
-## **Suggestions for Improvement**
+## **Room for Improvement**
 
 1. **Enable Pretraining (if applicable)**:
 
@@ -108,9 +108,8 @@ A **comprehensive analysis report** for the test run of the GNN-RL scheduler tra
 
 ---
 
-## **Final Verdict**
 
-The GNN-RL Scheduler:
+## **The GNN-RL Scheduler**:
 
 * Successfully learned a **scheduling policy** using PPO on a complex 90-task workflow.
 * Achieved **reasonable makespan** (569.0) on a CPU-only setup.
@@ -119,7 +118,7 @@ The GNN-RL Scheduler:
 
 
 
-#==================================================
+==================================================
 
 
 
@@ -153,9 +152,9 @@ The test ran **over 790 PPO updates** and reached **convergence**, as indicated 
 * **No idle tasks**, all tasks receive scheduling decisions.
 
 
-#### Claim:
+#### Test Learning:
 
-> The learned policy generates a complete and resource-aware schedule in `O(|T| · |N|)` time during inference — **faster than MILP**, which may not scale to 90+ tasks or take several minutes to solve.
+> The learned policy generates a complete and resource-aware schedule in `O(|T| · |N|)` time during inference, **faster than MILP**, which may not scale to 90+ tasks or take several minutes to solve.
 
 ---
 
@@ -172,7 +171,7 @@ The test ran **over 790 PPO updates** and reached **convergence**, as indicated 
 
 ### 4. **Generalization and Robustness Indicators**
 
-* **Stable FPS**: Maintains `>800 fps` through training — indicates **computational stability**.
+* **Stable FPS**: Maintains `>800 fps` through training, indicates **computational stability**.
 * **No reward spikes or collapses**.
 * **Consistent KL/clip\_fraction behavior**: Suggests the model avoids overfitting or premature convergence.
 
@@ -184,12 +183,12 @@ The test ran **over 790 PPO updates** and reached **convergence**, as indicated 
 
 
 
-#=================================================
 
 
+-------------------------------------------------------
 
 
-# A short summary:
-#-------------------------------------------------------
-The GNN-RL scheduler achieved convergence within 790 PPO updates, reducing value loss from \~30,000 to under 1 and entropy loss from −5.6 to −2.5, indicating a stable and confident policy. The final makespan of **569.0** for a 90-task workflow demonstrates efficient task-node mapping, with inference running in near real-time—substantially faster than MILP-based scheduling.
+# A Short Summary:
+
+The GNN-RL scheduler achieved convergence within 790 PPO updates, reducing value loss from \~30,000 to under 1 and entropy loss from −5.6 to −2.5, indicating a stable and confident policy. The final makespan of **569.0** for a 90-task workflow demonstrates efficient task-node mapping, with inference running in near real-time-substantially faster than MILP-based scheduling.
 
